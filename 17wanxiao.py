@@ -266,14 +266,14 @@ def check_in(username, password):
         #                        '"town":"","pois":"河南师范大学(东区)","lng":113.91572178314209,' \
         #                        '"lat":35.327695868943984,"address":"牧野区建设东路89号河南师范大学(东区)","text":"河南省-新乡市",' \
         #                        '"code":""} '
-        healthy_check_dict = healthy_check_in(token, post_dict)
-        check_dict_list.append(healthy_check_dict)
-    else:
+        # healthy_check_dict = healthy_check_in(token, post_dict)
+        # check_dict_list.append(healthy_check_dict)
+    # else:
         # 获取第二类健康打卡参数
-        post_dict = get_recall_data(token)
-        # 第二类健康打卡
-        healthy_check_dict = receive_check_in(token, custom_id_dict['customerId'], post_dict)
-        check_dict_list.append(healthy_check_dict)
+    post_dict = get_recall_data(token)
+    # 第二类健康打卡
+    healthy_check_dict = receive_check_in(token, custom_id_dict['customerId'], post_dict)
+    check_dict_list.append(healthy_check_dict)
 
     # 获取校内打卡ID
     id_list = get_id_list(token, custom_id_dict['customerAppTypeId'])
